@@ -1,0 +1,56 @@
+spring: 
+  cloud: 
+    consul: 
+      discovery: 
+        prefer-ip-address: true
+      host: consul-dev.ceitechs.com
+      port: 8500
+  data: 
+    mongodb: 
+      database: userservice
+      uri: "mongodb://mongo-dev.ceitechs.com:27017"
+  jackson: 
+    serialization.indent_output: true
+    serialization.write_dates_as_timestamps: false
+  zipkin: 
+    base-url: "http:/zipkin-dev.cloud.ceitechs.com:9411"
+    enabled: false
+    locator: 
+      discovery: 
+        enabled: true
+# LOGGING CONFIGURATION
+logging:
+  config: classpath:log4j2-dev.yaml      
+info: 
+  project: 
+    version: "@project.version@"
+
+jhipster: 
+  async: 
+    core-pool-size: 2
+    max-pool-size: 50
+    queue-capacity: 10000
+  http: 
+    version: V_1_1
+  mail: 
+    from: userservice@localhost
+  ribbon: 
+    display-on-active-profiles: dev
+  security: 
+    client-authorization: 
+      access-token-uri: "http://uaa/oauth/token"
+      client-id: internal
+      client-secret: internal
+      token-service-id: uaa
+oauth2: 
+  signature-verification: 
+    public-key-endpoint-uri: "http://uaa/oauth/token_key"
+    public-key-refresh-rate-limit: 10000
+    ttl: 3600000
+  web-client-configuration: 
+    client-id: web_app
+    secret: changeit
+security: 
+  oauth2: 
+    resource: 
+      filter-order: 3

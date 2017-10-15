@@ -1,0 +1,50 @@
+spring:
+  application: 
+    name: sample-app
+  devtools: 
+    livereload: 
+      enabled: true
+    restart: 
+      enabled: true
+  jackson: 
+    serialization.indent_output: true
+    serialization.write_dates_as_timestamps: false
+  profiles: 
+    active: local
+    
+info: 
+  project: 
+    version: "@project.version@"
+jhipster: 
+  async: 
+    core-pool-size: 2
+    max-pool-size: 50
+    queue-capacity: 10000
+  http: 
+    version: V_1_1
+  mail: 
+    from: userservice@localhost
+  ribbon: 
+    display-on-active-profiles: dev
+  security: 
+    client-authorization: 
+      access-token-uri: "http://uaa/oauth/token"
+      client-id: internal
+      client-secret: internal
+      token-service-id: uaa
+endpoints:
+  default:
+    web:
+      enabled: true
+oauth2: 
+  signature-verification: 
+    public-key-endpoint-uri: "http://uaa/oauth/token_key"
+    public-key-refresh-rate-limit: 10000
+    ttl: 3600000
+  web-client-configuration: 
+    client-id: web_app
+    secret: changeit
+security: 
+  oauth2: 
+    resource: 
+      filter-order: 3

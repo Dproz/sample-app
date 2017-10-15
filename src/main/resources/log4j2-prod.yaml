@@ -1,0 +1,30 @@
+configuration:
+  status: error
+  
+  Appenders:
+    Console:
+      name: Console
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%d{HH:mm:ss.SSS} [%t] %highlight{%level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue %logger{36} - %msg%n"
+    Socket: 
+      name: logstash
+      host: logstash-prod.cloud.ceitechs.com
+      port: 5000
+      JsonLayout: 
+        properties: true
+      
+  Loggers:  
+    Root:
+      level: error
+      AppenderRef: 
+        ref: Console
+        
+    Logger:
+        - name: com.ceitechs.dproz
+          level: info
+          additivity: false
+          AppenderRef: 
+            - ref: Console
+              level: info  
+          

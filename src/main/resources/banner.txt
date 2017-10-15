@@ -1,0 +1,12 @@
+
+ ${AnsiColor.GREEN}  / $$$$$$$  /$$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$
+ ${AnsiColor.GREEN}  | $$__  $$| $$__  $$| $$__  $$ /$$__  $$|_____ $$ 
+ ${AnsiColor.GREEN}  | $$  \ $$| $$  \ $$| $$  \ $$| $$  \ $$     /$$/ 
+ ${AnsiColor.GREEN}  | $$  | $$| $$$$$$$/| $$$$$$$/| $$  | $$    /$$/  
+ ${AnsiColor.GREEN}  | $$  | $$| $$____/ | $$__  $$| $$  | $$   /$$/   
+ ${AnsiColor.GREEN}  | $$  | $$| $$      | $$  \ $$| $$  | $$  /$$/    
+ ${AnsiColor.GREEN}  | $$$$$$$/| $$      | $$  | $$|  $$$$$$/ /$$$$$$$$
+ ${AnsiColor.GREEN}  |_______/ |__/      |__/  |__/ \______/ |________/
+                                                  
+${AnsiColor.BRIGHT_BLUE}:: Dproz :: Running Spring Boot ${spring-boot.version} ::
+:: www.ceitechs.com::${AnsiColor.DEFAULT}
