@@ -8,7 +8,8 @@ spring:
   data: 
     mongodb: 
       database: userservice
-      uri: "mongodb://localhost:27017"
+      uri: "mongodb://sample-app-admin:password@localhost:27017/sample-app"
+      username: 
   jackson: 
     serialization.indent_output: true
     serialization.write_dates_as_timestamps: false

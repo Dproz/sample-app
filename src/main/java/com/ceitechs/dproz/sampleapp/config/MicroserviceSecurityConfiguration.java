@@ -37,7 +37,7 @@ public class MicroserviceSecurityConfiguration extends ResourceServerConfigurerA
 				.authorizeRequests()
 				.antMatchers("/api/profile-info").permitAll()
 				.antMatchers("/application").permitAll()
-				.antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN);
+				.antMatchers("/api/**").hasAuthority(AuthoritiesConstants.ADMIN);
 	}
 
 	@Bean

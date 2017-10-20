@@ -6,7 +6,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 
-import com.ceitechs.dproz.sampleapp.aop.logging.LoggingAspect;
+import com.ceitechs.dproz.shared.aop.logging.LoggingAspect;
 
 @Configuration
 @EnableAspectJAutoProxy

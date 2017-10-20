@@ -1,9 +1,11 @@
 package com.ceitechs.dproz.sampleapp.domain;
 
+import java.util.Optional;
+
 public interface UserService {
 	
-	User getUser(Long id);
+	Optional<User> getUser(String id);
 	
-	void addUser(User user);
+	User addUser(User user);
 
 }

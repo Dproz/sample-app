@@ -1,4 +1,4 @@
-package com.ceitechs.dproz.sampleapp.aop.logging;
+package com.ceitechs.dproz.shared.aop.logging;
 
 import java.util.Arrays;
 

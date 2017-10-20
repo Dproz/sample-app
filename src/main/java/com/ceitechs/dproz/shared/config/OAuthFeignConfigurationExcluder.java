@@ -8,6 +8,14 @@ import org.springframework.core.type.classreading.MetadataReaderFactory;
 
 import com.ceitechs.dproz.shared.api.client.OAuth2InterceptedFeignConfiguration;
 
+/**
+ * Type filter which excludes {@link OAuth2InterceptedFeignConfiguration} 
+ * from auto configuration.
+ * 
+ * @author pdigumarthi
+ *
+ * @see  TypeExcludeFilter
+ */
 public class OAuthFeignConfigurationExcluder extends TypeExcludeFilter {
 
 	@Override
