@@ -7,12 +7,8 @@ spring:
       port: 8500
   data: 
     mongodb: 
-      database: userservice
-      uri: "mongodb://sample-app-admin:password@localhost:27017/sample-app"
-      username: 
-  jackson: 
-    serialization.indent_output: true
-    serialization.write_dates_as_timestamps: false
+      database: sample-app
+      uri: "mongodb://rwUser:rwUserPass@localhost:27017/sample-app"
   zipkin: 
     base-url: "http://localhost:9411"
     enabled: false
@@ -22,19 +18,8 @@ spring:
 # LOGGING CONFIGURATION
 logging:
   config: classpath:log4j2-local.yaml      
-info: 
-  project: 
-    version: "@project.version@"
 
 jhipster: 
-  async: 
-    core-pool-size: 2
-    max-pool-size: 50
-    queue-capacity: 10000
-  http: 
-    version: V_1_1
-  mail: 
-    from: userservice@localhost
   ribbon: 
     display-on-active-profiles: dev
   security: 
@@ -43,29 +28,21 @@ jhipster:
       client-id: internal
       client-secret: internal
       token-service-id: uaa
-  swagger: 
-    contact-email: ~
-    contact-name: ~
-    contact-url: ~
-    default-include-pattern: /api/.*
-    description: "userservice API documentation"
-    license: ~
-    license-url: ~
-    terms-of-service-url: ~
-    title: "userservice API"
-    version: "0.0.1"
-logging: 
-  config: "classpath:log4j2-local.yaml"
 management:
   security:
     enabled: false
+endpoints:
+  default:
+    web:
+      enabled: true     
+
 oauth2: 
   signature-verification: 
     public-key-endpoint-uri: "http://uaa/oauth/token_key"
     public-key-refresh-rate-limit: 10000
     ttl: 3600000
   web-client-configuration: 
-    client-id: web_app
+    client-id: sample-app
     secret: changeit
 security: 
   oauth2: 

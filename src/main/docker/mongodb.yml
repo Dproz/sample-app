@@ -1,14 +1,14 @@
 version: '2.0'
 services:
-    sample-app-mongodb-node:
+    mongo-instance: 
         ports:
             - "27017:27017"
         build:
             context: .
             dockerfile: mongodb/MongoDB.Dockerfile
         environment:
-          MONGO_INITDB_ROOT_USERNAME: "rootAdmin"
-          MONGO_INITDB_ROOT_PASSWORD: "rootAdminPass"
+          MONGO_INITDB_ROOT_USERNAME: rootAdmin
+          MONGO_INITDB_ROOT_PASSWORD: rootAdminPass
           APP_DB_ADMIN_USER: appAdmin
           APP_DB_ADMIN_PASSWORD: appAdminPass
           APP_DB_RW_USER: rwUser

@@ -9,9 +9,6 @@ spring:
     mongodb: 
       database: userservice
       uri: "mongodb://mongo-prod.ceitechs.com:27017"
-  jackson: 
-    serialization.indent_output: true
-    serialization.write_dates_as_timestamps: false
   zipkin: 
     base-url: "http:/zipkin-prod.cloud.ceitechs.com:9411"
     enabled: false
@@ -21,19 +18,8 @@ spring:
 # LOGGING CONFIGURATION
 logging:
   config: classpath:log4j2-prod.yaml      
-info: 
-  project: 
-    version: "@project.version@"
 
 jhipster: 
-  async: 
-    core-pool-size: 2
-    max-pool-size: 50
-    queue-capacity: 10000
-  http: 
-    version: V_1_1
-  mail: 
-    from: userservice@localhost
   ribbon: 
     display-on-active-profiles: dev
   security: 

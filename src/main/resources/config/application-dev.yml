@@ -7,7 +7,7 @@ spring:
       port: 8500
   data: 
     mongodb: 
-      database: userservice
+      database: sample-app
       uri: "mongodb://mongo-dev.ceitechs.com:27017"
   jackson: 
     serialization.indent_output: true
@@ -26,14 +26,6 @@ info:
     version: "@project.version@"
 
 jhipster: 
-  async: 
-    core-pool-size: 2
-    max-pool-size: 50
-    queue-capacity: 10000
-  http: 
-    version: V_1_1
-  mail: 
-    from: userservice@localhost
   ribbon: 
     display-on-active-profiles: dev
   security: 

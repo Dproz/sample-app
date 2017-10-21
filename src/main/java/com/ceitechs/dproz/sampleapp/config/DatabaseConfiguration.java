@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +30,9 @@ import io.github.jhipster.domain.util.JSR310DateConverters.ZonedDateTimeToDateCo
 @Import(value = MongoAutoConfiguration.class)
 @EnableMongoAuditing(auditorAwareRef = "springSecurityAuditorAware")
 public class DatabaseConfiguration {
+	
+	@Value("${spring.data.mongodb.uri}")
+	private String uri;
 
 	private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
 
@@ -53,6 +57,8 @@ public class DatabaseConfiguration {
 	@Bean
 	public Mongobee mongobee(MongoClient mongoClient, MongoTemplate mongoTemplate, MongoProperties mongoProperties) {
 		log.debug("Configuring Mongobee");
+		log.info("Configuring Mongobee:"+uri);
+
 		Mongobee mongobee = new Mongobee(mongoClient);
 		mongobee.setDbName(mongoProperties.getDatabase());
 		mongobee.setMongoTemplate(mongoTemplate);

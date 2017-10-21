@@ -1,0 +1,18 @@
+# ===================================================================
+# Spring Cloud Consul Config bootstrap configuration for the "dev" profile
+# In prod profile, properties will be overwriten by the ones defined in bootstrap-prod.yml
+# ===================================================================
+
+spring:
+    application:
+        name: sample-app
+    profiles:
+      active: local    
+    cloud:
+        consul:
+            discovery:
+                tags: profile=${spring.profiles.active}, version=${info.project.version}
+            config:
+                fail-fast: false # if not in "prod" profile, do not force to use Spring Cloud Config
+                format: yaml
+                profile-separator: "-"

@@ -7,20 +7,20 @@
 environment=preprod
 
 #Initialize the admin Users for MongoDB
-admin_users="userAdmin"
+admin_users=${APP_DB_ADMIN_USER}
 
 
 #Initialize the Read Write Users for MongoDB
-rw_users="writeUser"
+rw_users=${APP_DB_RW_USER}
 
 #####Password Section for Users in Mongodb ###############
 
 #Initialize the Passwords for admin Users in PREPROD
-admin_pwd="userAdminPass"
+admin_pwd=${APP_DB_ADMIN_PASSWORD}
 
 
 #Initialize the Passwords for Read Write Users in MongoDB in PREPROD
-rw_pwd="preprodWriteUsrPass"
+rw_pwd=${APP_DB_RW_PASSWORD}
 
 
 

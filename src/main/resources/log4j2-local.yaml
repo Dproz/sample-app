@@ -10,7 +10,7 @@ configuration:
       
   Loggers:  
     Root:
-      level: info
+      level: error
       AppenderRef: 
         ref: Console
         
@@ -20,5 +20,5 @@ configuration:
           additivity: false
           AppenderRef: 
             - ref: Console
-              level: info  
+              level: debug  
           

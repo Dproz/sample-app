@@ -1,18 +1,18 @@
 version: '2'
 services:
-    userservice-app:
-        image: userservice
+    sample-app:
+        image: sample-app
+        ports:
+            - 8080:8080
         environment:
-            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_PROFILES_ACTIVE=local
             - SPRING_CLOUD_CONSUL_HOST=consul
             - SPRING_CLOUD_CONSUL_PORT=8500
-            - SPRING_DATA_MONGODB_URI=mongodb://userservice-mongodb:27017
-            - SPRING_DATA_MONGODB_DATABASE=userservice
-            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
-    userservice-mongodb:
+            - SPRING_DATA_MONGODB_URI=mongodb://rwUser:rwUserPass@mongo-instance:27017/sample-app
+    mongo-instance:
         extends:
             file: mongodb.yml
-            service: userservice-mongodb
+            service: mongo-instance
     consul:
         image: consul:0.9.3
         command: consul agent -dev -ui -client 0.0.0.0
